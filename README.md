@@ -26,3 +26,10 @@ The upgrade.sh script was created to aid in upgrading the server to a newer vers
 ```
 ./upgrade.sh starmade_1
 ```
+
+## Backing up world files
+
+If you want to backup the world data to somewhere outside the docker volumes you can run ./backup.sh.  This script creates and puts a world/blueprint backup in the backups directory from the passed docker instance name.  If the backups director doesn't exist, it is automatically created.  The backups are named as starmade-backup-YYYYmmdd-HHMM.tar.gz
+```
+./backup.sh starmade_1
+```
