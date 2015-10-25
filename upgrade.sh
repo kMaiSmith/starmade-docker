@@ -7,7 +7,7 @@ fi
 
 INSTANCE_NAME=$1
 
-NEW_INSTANCE_ID=$(docker create -p 4242:4242 --volumes-from=$INSTANCE_NAME -t starmade)
+NEW_INSTANCE_ID=$(docker create -p 4242:4242 --volumes-from=$INSTANCE_NAME starmade)
 docker stop $INSTANCE_NAME && docker rm $INSTANCE_NAME
 
 docker rename $NEW_INSTANCE_ID $INSTANCE_NAME

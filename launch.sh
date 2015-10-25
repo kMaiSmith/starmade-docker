@@ -7,5 +7,5 @@ fi
 
 INSTANCE_NAME=$1
 
-docker create -p 4242:4242 --name $INSTANCE_NAME -t starmade
+docker create -p 4242:4242 --name $INSTANCE_NAME starmade
 docker start $INSTANCE_NAME
