@@ -10,4 +10,10 @@ function shutdown() {
 
 trap shutdown SIGTERM SIGINT SIGQUIT SIGHUP
 
+unzip -o /opt/StarMade.zip
+cp /opt/server.cfg .
+cp /opt/whitelist.txt .
+cp /opt/admins.txt .
+cp /opt/blacklist.txt .
+
 java -Xms128m -Xmx1024m -jar StarMade.jar -server & wait $!
