@@ -33,3 +33,11 @@ If you want to backup the world data to somewhere outside the docker volumes you
 ```
 ./backup.sh starmade_1
 ```
+
+## Starting a new server from a backup
+
+The ./launch.sh script is capable of taking a second argument which is the path to a backup tarball created from the ./backup.sh.  Before restoring, you should first stop your existing starmade dockerized server that is consuming port 4242; the origonal dockerized starmade server should not be removed until everything has been proven to work on the restored image.  On average hardware, the restore will take about 30 seconds to complete.
+```
+docker stop starmade_1
+./launch.sh starmade_2 backups/starmade-backup-20151101-0120.tar.gz
+```
