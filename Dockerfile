@@ -4,7 +4,7 @@ MAINTAINER Kyle Smith <kmaismith@gmail.com>
 EXPOSE 4242
 
 # Fetch and extract the starmade server stuff
-ENV STARMADE_BUILD_REV=20150907_154125
+ENV STARMADE_BUILD_REV=20151102_221952
 RUN wget -O /opt/StarMade.zip http://files.star-made.org/build/starmade-build_${STARMADE_BUILD_REV}.zip
 RUN unzip /opt/StarMade.zip -d /opt/StarMade
 
