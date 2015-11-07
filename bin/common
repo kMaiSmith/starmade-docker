@@ -1,0 +1,9 @@
+#!/bin/bash
+
+if [ -z "$1" ]; then
+    echo "you must specify a starmade docker instance name"
+    exit 1
+fi
+
+STARMADE_IMAGE_TAG=${STARMADE_IMAGE_TAG:-kmaismith/starmade}
+STARMADE_PORT_OPTS=${STARMADE_PORT_OPTS:--p 4242:4242}

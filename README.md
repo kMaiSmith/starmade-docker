@@ -41,3 +41,14 @@ The ./launch.sh script is capable of taking a second argument which is the path 
 docker stop starmade_1
 ./launch.sh starmade_2 backups/starmade-backup-20151101-0120.tar.gz
 ```
+
+## User specified port options and extra docker args
+
+When running any of the scripts that involve spinning up a new docker contianer (upgrade.sh, launch.sh), the user can now specify port options if the default `-p 4242:4242` isn't satisfactory; the user can also specify extra arguments to pass to the docker create commands. To specify custom port options, export the `STARMADE_PORT_OPTS` environment variable to contain the new port options.  For extra arguments, export the `STARMADE_EXTRA_OPTS` environment variable to contain the extra docker options. 
+
+```
+export STARMADE_PORT_OPTS="-p 10.0.0.20:4242:4242"
+export STARMADE_EXTRA_OPTS="--restart always"
+
+./launch.sh starmade_1
+```

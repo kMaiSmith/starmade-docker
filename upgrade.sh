@@ -1,13 +1,10 @@
 #!/bin/bash
 
-if [ -z $1 ]; then
-    echo "you must specify the name of a running starmade docker instance"
-    exit 1
-fi 
+. bin/common
 
 INSTANCE_NAME=$1
 
-NEW_INSTANCE_ID=$(docker create -p 4242:4242 --volumes-from=$INSTANCE_NAME starmade)
+NEW_INSTANCE_ID=$(docker create --volumes-from=$INSTANCE_NAME $STARMADE_PORT_OPTS $STARMADE_EXTRA_OPTS $STARMADE_IMAGE_TAG)
 docker stop $INSTANCE_NAME && docker rm $INSTANCE_NAME
 
 docker rename $NEW_INSTANCE_ID $INSTANCE_NAME

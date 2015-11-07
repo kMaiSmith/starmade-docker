@@ -1,9 +1,6 @@
 #!/bin/bash
 
-if [ -z $1 ]; then
-    echo "you must specify a running or stopped dockerized starmade instance to backup"
-    exit 1
-fi
+. bin/common
 
 mkdir -p backups
 
