@@ -5,7 +5,6 @@ EXPOSE 4242
 
 # Fetch and extract the starmade server stuff
 RUN wget -O /opt/StarMade.zip http://files.star-made.org/build/starmade-build_20151106_212407.zip
-RUN unzip /opt/StarMade.zip -d /opt/StarMade
 
 # Create the volumes to persist the world and user uploaded blueprints
 VOLUME /opt/StarMade
