@@ -4,7 +4,7 @@ MAINTAINER Kyle Smith <kmaismith@gmail.com>
 EXPOSE 4242
 
 # Fetch and extract the starmade server stuff
-RUN wget -O /opt/StarMade.zip http://files-origin.star-made.org/build/starmade-build_20151122_012619.zip
+RUN wget -O /opt/StarMade.zip http://files-origin.star-made.org/build/starmade-build_20151219_043839.zip
 
 # Create the volumes to persist the world and user uploaded blueprints
 VOLUME /opt/StarMade
